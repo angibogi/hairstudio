@@ -33,7 +33,7 @@ function App() {
         <Helmet>
                 <meta charSet="utf-8" />
                 <title>Hair Studio - Newsletter</title>
-                <link rel="canonical" href="http://mysite.com/example" />
+                <link rel="canonical" href="https://www.af-hairstudio.com/" />
           </Helmet>
     <div class="contact_image">
     <img src={logo} alt="logo"/>
@@ -68,7 +68,7 @@ function App() {
         
     </form>
     : null}
-    {done ? <div><h1>La ringraziamo per averci contattato! </h1> </div>  : null}
+    {done ? <div><h1>Grazie!</h1> </div>  : null}
     </>
   )
 }
