@@ -14,7 +14,7 @@ function App() {
     const sendEmail = (e) => {
       e.preventDefault();
   
-      emailjs.sendForm('service_2kl80zv', 'template_iiadgy2', form.current, 'd5XJP6UfiJqr7E5vQ')
+      emailjs.sendForm('service_ocyg4eg', 'template_23brcv7', form.current, 'dHaQFUpZc8m4OrXdO')
         .then((result) => {
           console.log(result.text);
           setDone(true);
@@ -38,35 +38,37 @@ function App() {
     <div class="contact_image">
     <img src={logo} alt="logo"/>
     </div>
+    {label ?
     <div class="contact_text">
     <h1>Iscriviti per ricevere sconti personalizzati!</h1>
     </div>
-
-    <form ref={form} onSubmit={sendEmail} >
+    : null}
     {label ?
+    <form ref={form} onSubmit={sendEmail} >
+    
         <div class="contact_box">
         <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required/>
+        <input type="text" id="name" name="user_name" required/>
 
         <label for="surname">Cognome:</label>
-        <input type="text" id="cognome" name="cognome" required/>
+        <input type="text" id="cognome" name="user_surname" required/>
 
         <label for="birthdate">Data di nascita:</label>
         <input type="date" id="birthdate" name="birthdate" required/>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required/>
+        <input type="email" id="email" name="user_email" required/>
 
         <label for="phone">Numero di telefono:</label>
-        <input type="tel" id="phone" name="phone" required/>
+        <input type="tel" id="phone" name="user_phone" required/>
         </div>
-                : null}
-                 {done ? <div><p>La ringraziamo per averci contattato, stiamo elaborando la sua richiesta </p> </div>  : null}
+        <div class="contact_button">
+        <button type="submit" value="Send">Invia</button>
+        </div>
+        
     </form>
-
-    <div class="contact_box">
-    <button type="submit">Invia</button>
-    </div>
+    : null}
+    {done ? <div><h1>La ringraziamo per averci contattato! </h1> </div>  : null}
     </>
   )
 }
